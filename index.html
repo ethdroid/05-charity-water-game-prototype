@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Drop | A charity: water Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Charity Water Game Prototype</h1>
-    <script src="script.js"></script>
+  <header class="site-header">
+    <img src="img/cw_logo.png" alt="charity: water logo" class="logo" onerror="this.style.display='none'">
+    <h1>Water Drop</h1>
+    <p class="tagline">Catch clean water. Avoid the dirty drops. Fill the jerry can!</p>
+  </header>
+
+  <main class="game-wrapper">
+    <section class="stats" aria-live="polite">
+      <div class="stat">
+        <span class="stat-label">Score</span>
+        <span id="score" class="stat-value">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Goal</span>
+        <span id="goal" class="stat-value">20</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time</span>
+        <span id="time" class="stat-value">30</span>
+      </div>
+    </section>
+
+    <div class="progress" aria-hidden="true">
+      <div id="progress-fill" class="progress-fill"></div>
+    </div>
+
+    <section id="game-area" class="game-area">
+      <div id="overlay" class="overlay">
+        <h2 id="overlay-title">Ready to bring clean water?</h2>
+        <p id="overlay-text">
+          Tap the <strong class="blue">blue drops</strong> (+1).<br>
+          Avoid the <strong class="brown">brown drops</strong> (-2).<br>
+          Reach 20 points before time runs out!
+        </p>
+        <button id="start-btn" class="btn btn-primary">Start Game</button>
+      </div>
+    </section>
+
+    <p id="message" class="message" aria-live="polite">Every drop counts.</p>
+
+    <div class="controls">
+      <button id="reset-btn" class="btn btn-secondary">Reset</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Millions of people still live without clean water. charity: water is changing that, one project at a time.</p>
+    <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener" class="btn btn-primary">Donate to charity: water</a>
+  </footer>
+
+  <canvas id="confetti" class="confetti"></canvas>
+  <script src="script.js"></script>
 </body>
 </html>
